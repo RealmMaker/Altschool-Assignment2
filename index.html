@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Lobby by AI</title>
+    <style>
+        /* Body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #f0f4f9, #ffffff);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: #4a4a4a;
+        }
+
+        /* Glow effect container */
+        .link-container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Link button styles */
+        a {
+            display: inline-block;
+            margin: 0 30px;
+            padding: 15px 40px;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: #4a4a4a;
+            background: #ffffff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.1),
+                0 0 30px rgba(0, 191, 255, 0.4);
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* Hover effect for buttons */
+        a:hover {
+            background: #e0f7ff;
+            color: #003366;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(0, 191, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        /* Cursor glow effect */
+        .cursor-glow {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgba(0, 191, 255, 0.8);
+            box-shadow: 
+                0 0 40px rgba(0, 191, 255, 0.8),
+                0 0 60px rgba(0, 191, 255, 0.6);
+            pointer-events: none;
+            transition: transform 0.08s ease-out;
+        }
+
+        /* Subtle soft ambient lighting */
+        .ambient-light {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent);
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        .light1 {
+            top: 10%;
+            left: 15%;
+        }
+
+        .light2 {
+            bottom: 10%;
+            right: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ambient lighting elements -->
+    <div class="ambient-light light1"></div>
+    <div class="ambient-light light2"></div>
+
+    <!-- Content container -->
+    <div class="link-container">
+        <a href="/table.html">Tables</a>
+        <a href="/media.html">Media</a>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <script>
+        // Cursor glow effect
+        const cursorGlow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = `${e.pageX}px`;
+            cursorGlow.style.top = `${e.pageY}px`;
+        });
+    </script>
+</body>
+</html>
